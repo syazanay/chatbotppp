@@ -27,13 +27,13 @@ def get_initializer(init_op, seed=None, init_weight=None):
     else:
         raise ValueError("Unknown init_op %s" % init_op)
 
-
-# def get_device_str(device_id, num_gpus):
-#     """Return a device string for multi-GPU setup."""
-#     if num_gpus == 0:
-#         return "/cpu:0"
-#     device_str_output = "/gpu:%d" % (device_id % num_gpus)
-#     return device_str_output
+# uncommented out
+def get_device_str(device_id, num_gpus):
+    """Return a device string for multi-GPU setup."""
+    if num_gpus == 0:
+        return "/cpu:0"
+    device_str_output = "/gpu:%d" % (device_id % num_gpus)
+    return device_str_output
 
 
 def create_embbeding(vocab_size, embed_size, dtype=tf.float32, scope=None):
