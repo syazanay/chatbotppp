@@ -52,7 +52,8 @@ class BotTrainer(object):
 
         config_proto = tf.ConfigProto(log_device_placement=log_device_placement,
                                       allow_soft_placement=True)
-        config_proto.gpu_options.allow_growth = True
+        #config_proto.gpu_options.allow_growth = True
+        config_proto.cpu_options.allow_growth = True
 
         with tf.Session(target=target, config=config_proto, graph=self.graph) as sess:
             # This initialization is useful even when the model is restored from the last time
